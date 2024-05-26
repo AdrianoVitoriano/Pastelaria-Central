@@ -1,6 +1,9 @@
 #container1 {
   max-width: 800px;
 }
+/* header{
+  background: rgba(0, 0, 0, 0.644)
+} */
 /* body {
     
   background-image:     linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("./img/pasteis-background.jpg");
@@ -12,3 +15,7 @@
   background-attachment: fixed;
   
 } */
+
+.hidden {
+  display: none;
+}
