@@ -3,6 +3,7 @@
 // sr.r
 
 function toggleForms() {
+    alert('teste');
     var loginForm = document.getElementById('telaLogin');
     var registerForm = document.getElementById('telaRegistro');
     loginForm.classList.toggle('hidden');
