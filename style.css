@@ -19,3 +19,37 @@
 .hidden {
   display: none;
 }
+
+.corFontePrimario {
+  color: #fff0da;
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.corFonteSecundario {
+  color: #C75220;
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.corBackgroundPrimario {
+  background-color: #ffffff61;;
+}
+.corBackgroundSecundario {
+  background-color: #FFE0B3;;
+}
+
+.corBackgroundTransparente {
+  background-color: rgba(255, 255, 255, 0);
+}
+.dm-serif-display-regular {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif-display-regular-italic {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: italic;
+}

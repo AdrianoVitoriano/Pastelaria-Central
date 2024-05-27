@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en" >
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,19 +13,19 @@
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body class="d-grid">
-  <header class="sticky-top border-bottom text-decoration-none bg-tertiary" id="header">
-    <div>
+  <header class="sticky-top text-decoration-none">
+    <div class="corBackgroundSecundario shadow-sm border-bottom">
       <nav class="nav nav-underline justify-content-center fs-4 py-2">
-        <a class="nav-link fw-light px-2 active" aria-current="page" href="./index.html">Home</a>
-        <a class="nav-link fw-light px-2" href="./documentacao.html">Documentação</a>
-        <a class="nav-link fw-light px-2" href="./comece.html">Comece</a>
+        <a class="nav-link px-2 active" aria-current="page" style="color:#C75220">Home</a>
+        <a class="nav-link px-2"  href="./documentacao.html"style="color:#C75220">Documentação</a>
+        <a class="nav-link px-2" href="./comece.html"style="color:#C75220">Comece</a>
       </nav>
     </div>
   </header>
   <div class="p-2 d-flex justify-content-center m-auto text-center" style="height: 85vh">
     <div class="p-4 rounded-5" id="container1">
-      <h1 class="display-5 fw-light font-monospace">API Pastelaria Central</h1>
-      <div class="mx-auto">
+      <div class="mx-auto p-3 corBackgroundSecundario rounded-3">
+        <h1 class="display-5 font-monospace corFonteSecundario">API Pastelaria Central</h1>
         <figure class="text-center">
           <blockquote class="blockquote">
             <p class="lead">
@@ -38,19 +38,23 @@
           </figcaption>
         </figure>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-          <a href="./comece.html" type="button" class="btn btn-light btn-lg px-4 me-sm-3">Comece</a>
-          <a href="./documentacao.html" type="button" class="btn btn-outline-info btn-lg px-4">Documentação</a>
+          <a href="./comece.html" type="button" class="btn btn-warning btn-lg px-4 me-sm-3">Comece</a>
+          <a href="./documentacao.html" type="button" class="btn btn-light btn-lg px-4">Documentação</a>
         </div>
       </div>
     </div>
   </div>
-  <footer class="mt-auto text-white-50 border-top text-center" id="footer">
+  <footer class="mt-auto fixed-bottom border-top text-center corBackgroundSecundario corFonteSecundario" id="footer">
     <p class="my-2">
       API Pastelaria Central.
-      <a href="https://github.com/AdrianoVitoriano/PI-Pastelaria-2024-01" target="_blank" class="text-white">GitHub Project</a> by
-      <a href="https://github.com/AdrianoVitoriano" target="_blank" class="text-white">Adriano</a>,
-      <a href="https://github.com/ChacaraKairo" target="_blank" class="text-white">Kairo</a> e
-      <a href="https://github.com/DiegoS-Nunes" target="_blank" class="text-white">Diego</a>.
+      <a href="https://github.com/AdrianoVitoriano/PI-Pastelaria-2024-01" target="_blank" class=""
+        >GitHub Project</a
+      >
+      by
+      <a href="https://github.com/AdrianoVitoriano" target="_blank" class="">Adriano</a>,
+      <a href="https://github.com/ChacaraKairo" target="_blank" class="">Kairo</a>
+      e
+      <a href="https://github.com/DiegoS-Nunes" target="_blank" class="">Diego</a>.
     </p>
   </footer>
   <script src="../index.js"></script>
