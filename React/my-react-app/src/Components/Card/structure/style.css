@@ -1,0 +1,53 @@
+
+.card {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background-color: transparent;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	
+}
+.card:hover, .card:active {
+	transform: scale(1.05);
+	transition: 0.5s;
+}	
+.card:hover .title , .card:active .title{
+	transform: scale(1.05);
+	transition: 0.5s;
+	animation: up 0.5s forwards ease-in-out;
+}
+
+@keyframes up{
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-10px);
+	}
+
+}
+
+.card:hover .card-body, .card:active .card-body {
+	visibility: visible;
+	animation: fadeIn 1s forwards;
+
+	
+}
+
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.card-body {
+	visibility: hidden;
+}
+.title {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-top: 1em;
+}

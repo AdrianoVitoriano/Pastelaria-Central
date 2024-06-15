@@ -1,0 +1,15 @@
+.textTitulo{
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    color: white;
+}
+.imgLogo{
+    width: 50px;
+    height: 50px;
+}
+.header-navbar{
+    background-color: crimson;
+}

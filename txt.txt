@@ -1,0 +1,35 @@
+<div className="accordion-item m-2 rounded-5">
+			<div className="container-flex text-start p-1">
+				<div className="row accordion-header text-center ">
+					<div className="col-1 pedido border rounded-5">{"P-"+props.pedido}</div>
+					<div className="col mesa border-end">{"M-" + props.mesa}</div>
+					<div className="col total border-end">{"Total R$" + props.total}</div>
+					{/* <div className="col usuario border-end">{props.usuario}</div> */}
+					<div className="col data border-end">{props.data}</div>
+					<div className="col button ">				<button
+					onClick={() => {}}
+					className="accordion-button"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target={"#" + props.collapseId}
+					aria-expanded="true"
+					aria-controls={props.collapseId}
+				></button></div>
+				</div>
+			</div>
+			<div id={props.collapseId} className="accordion-collapse collapse show" data-bs-parent="#PedidosAccordion">
+				<div className="accordion-body">
+					<p>Tem um item aqui</p>
+					{/* {
+                            //     <div className="list-group">
+                            props.items.map((item) => {
+                                return(
+                                    <a href={item.url} className="list-group-item list-group-item-action">
+                                        {item.text}
+                                    </a>
+                                )
+                            })
+                        } */}
+				</div>
+			</div>
+		</div>
