@@ -2,7 +2,7 @@ import "./style.css"
 
 export const Body = ({ children }) => {
 	return (
-		<div class="card-body">
+		<div className="card-body">
 				{ children }
 		</div>
 	);

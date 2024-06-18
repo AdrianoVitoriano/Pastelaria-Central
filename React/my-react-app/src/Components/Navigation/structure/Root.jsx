@@ -1,6 +1,6 @@
 export const Root = ({title, children }) => {
     return (
-        <div className="navigation" id={`navigation${title}`} onClick={()=>{}}>
+        <div className="navigation fixed-start" id={`navigation${title}`} onClick={()=>{}}>
                 {children}
         </div>
         

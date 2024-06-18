@@ -11,6 +11,11 @@ const Links = [
 		icon: "fast-food-outline",
 	},
 	{
+		title: "Categorias",
+		url: "/categorias",
+		icon: "file-tray-full-outline",
+	},
+	{
 		title: "Pedidos",
 		url: "/pedidos",
 		icon: "cart-outline",
@@ -35,9 +40,9 @@ export const Navigator = () => {
 						{Links.map((link) => {
 							console.log(window.location.pathname)
 							return (
-								<Navigation.Link href={link.url} title={link.title} active={window.location.pathname.includes(link.url) || window.location.pathname === "/" && link.url === "/mesas"}>
+								<Navigation.NavLink href={link.url} title={link.title} active={window.location.pathname.includes(link.url) || window.location.pathname === "/" && link.url === "/mesas"	 }>
 									<ion-icon name={link.icon} size="large"></ion-icon>
-								</Navigation.Link>
+								</Navigation.NavLink>
 							);
 						})}
 					</Navigation.LinkList>

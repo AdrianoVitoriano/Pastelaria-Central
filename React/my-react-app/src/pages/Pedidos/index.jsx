@@ -17,22 +17,22 @@ export const Pedidos = () => {
 	}, []);
 	return (
 		<>
-			<div class="container text-center">
+			<div className="container text-center">
 				<div className="row text-center">
-				<Card.Root>
+				<Card.Root colNumber={4} hover={true}>
 						<Card.Title title={`Opções`}>
 						</Card.Title>
 
 						<Card.Body>
 							<Card.Buttons>
-								<Card.Button action={() => {}} title={"Novo Pedido"} />
+								<Card.Button href={"/pedidos/cadastro"} title={"Novo Pedido"} />
 							</Card.Buttons>
 						</Card.Body>
 					</Card.Root>
 					{pedidos.map((pedido) => {
 						return (
 							<>
-								<Card.Root>
+								<Card.Root colNumber={4} hover={true}>
 									<Card.Title title={`Pedido: ${pedido.id}`}>
 										<Card.Badge bgColor={pedido.status ? "bg-danger" : "bg-success"} />
 									</Card.Title>

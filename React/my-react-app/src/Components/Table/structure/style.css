@@ -1,0 +1,15 @@
+.table-root{
+    margin-top: 10px;
+}
+.table-head{
+    background-color: #f5f5f5;
+    font-weight: bold;
+    padding-right: 10px;
+}
+.table-tr{
+    border-bottom: 2px dotted #d1cfcf;
+}
+.table-td{
+    margin-right: 5px !important;
+
+}

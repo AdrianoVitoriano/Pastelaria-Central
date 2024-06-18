@@ -17,21 +17,21 @@ export const Itens = () => {
 	}, []);
 	return (
 		<>
-			<div class="container text-center">
+			<div className="container text-center">
 				<div className="row text-center">
-				<Card.Root>
+				<Card.Root colNumber={4} hover={true}>
 						<Card.Title title={`Opções`}>
 						</Card.Title>
 
 						<Card.Body>
 							<Card.Buttons>
-								<Card.Button action={() => {}} title={"Novo item"} />
+								<Card.Button  href={"/itens/cadastro"} title={"Novo item"} />
 							</Card.Buttons>
 						</Card.Body>
 					</Card.Root>
 					{itens.map((item) => {
 						return (
-							<Card.Root>
+							<Card.Root colNumber={4} hover={true}>
 								<Card.Title title={`${item.nome}`}>
 									<Card.Badge bgColor={item.ativo ? "bg-success" : "bg-danger"} />
 								</Card.Title>

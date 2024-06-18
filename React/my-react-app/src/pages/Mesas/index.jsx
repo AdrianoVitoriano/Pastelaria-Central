@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { route } from "../../../route";
 import { Card } from "../../Components/Card/structure";
-import { PopUp } from "../../Components/Modal/structure";
 
 const mesaList = [
 	{
@@ -67,7 +66,6 @@ const mesaList = [
 ];
 
 export const Mesas = () => {
-
 	const [mesas, setMesas] = useState([]);
 	useEffect(() => {
 		fetch(`${route}/mesas-comandas`, {
@@ -84,33 +82,34 @@ export const Mesas = () => {
 
 	return (
 		<>
-			<div class="container text-center">
+			<div className="container text-center">
 				<div className="row text-center">
-					<Card.Root>
+					<Card.Root colNumber={4} hover={true}>
 						<Card.Title title={`Opções`}></Card.Title>
 
 						<Card.Body>
 							<Card.Buttons>
-								<Card.Button  action={PopUp} title="Nova Mesa"/>
+								<Card.Button  href={"/mesas/cadastro"} title="Nova Mesa"/>
 							</Card.Buttons>
 						</Card.Body>
 					</Card.Root>
 					{mesas.map((mesa) => {
 						return (
 							<>
-								<Card.Root>
+								<Card.Root colNumber={4} hover={true}>
 									<Card.Title title={`Mesa: ${mesa.id}`}>
 										<Card.Badge bgColor={mesa.status ? "bg-danger" : "bg-success"} />
 									</Card.Title>
 
 									<Card.Body>
+									<Card.Details text={mesa.localizacao} />
 										{mesa.status ? (
 											<>
 												<Card.Details name={"Comanda"} text={mesa.comanda} />
 												<Card.Details name={"Total"} text={`R$${mesa.total ? mesa.total : "00,00"}`} />
 												<Card.Buttons>
-													<Card.Button action={() => {}} title={"Novo pedido"} />
-													<Card.Button action={() => {}} title={"Ver comanda"} />
+													<Card.Button href={`/pedidos/cadastro/${mesa.id}`} title={"Novo pedido"} />
+													<Card.Button href={`/comandas/${mesa.comanda}`} title={"Ver comanda"} />
 												</Card.Buttons>
 											</>
 										) : (

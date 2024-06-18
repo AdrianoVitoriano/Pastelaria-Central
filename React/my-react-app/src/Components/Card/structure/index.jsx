@@ -7,6 +7,7 @@ import { Button } from "./Button";
 import { Buttons } from "./Buttons";
 import { Badge } from "./Badge";
 import "./style.css";
+import { Subtitle } from "./Subtitle";
 
 export const Card = {
 	Root,
@@ -17,4 +18,5 @@ export const Card = {
 	Buttons,
 	Button,
 	Badge,
+	Subtitle,
 };

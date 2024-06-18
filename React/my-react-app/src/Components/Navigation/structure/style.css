@@ -2,12 +2,13 @@
     transition: 1s;
     background-color: rgb(227, 227, 222);
     position: fixed;
-    z-index: 9999;
+    z-index: 999;
     height: 100vh;
     width: 55px;
     box-shadow: 10px 0 0 rgb(255, 255, 255);
     overflow-x: hidden;
     transition: 0.5s;
+    padding-top: 30px;
 }
 .navigation:hover, .navigation:active {
     width: 250px;

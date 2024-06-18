@@ -18,12 +18,12 @@ export const Comandas = () => {
 	}, []);
 	return (
 		<>
-			<div class="container text-center">
+			<div className="container text-center">
 				<div className="row text-center">
 					{comandas.map((comanda) => {
 						return (
 							<>
-								<Card.Root>
+								<Card.Root colNumber={4} hover={true}>
 									<Card.Title title={`Comanda: ${comanda.id}`}>
 										<Card.Badge bgColor={comanda.aberta ? "bg-success" : "bg-danger"} />
 									</Card.Title>
@@ -34,7 +34,7 @@ export const Comandas = () => {
 										<Card.Details name={"Total"} text={`R$${comanda.total ? comanda.total : "00,00"}`} />
 										<Card.Buttons>
 											<Card.Button action={() => {}} title={"Alterar"} />
-											<Card.Button action={() => {}} title={"Visualizar"} />
+											<Card.Button href={`/comandas/${comanda.id}`} title={"Visualizar"} />
 										</Card.Buttons>
 									</Card.Body>
 								</Card.Root>
