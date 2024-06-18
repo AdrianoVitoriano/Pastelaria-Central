@@ -1,0 +1,82 @@
+.navigation{
+    transition: 1s;
+    background-color: rgb(227, 227, 222);
+    position: fixed;
+    z-index: 999;
+    height: 100vh;
+    width: 55px;
+    box-shadow: 10px 0 0 rgb(255, 255, 255);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 30px;
+}
+.navigation:hover, .navigation:active {
+    width: 250px;
+}
+
+.navigation-linklist{
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px;
+
+}
+
+.navigation-list{
+    align-items: top;
+    border-radius: 20px;
+    width: 100%;
+}
+.list-link{
+    position: relative;
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin-bottom: 20px;
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.active{
+    background-color: rgb(255, 255, 255);
+}
+.active::before{
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 15px 15px 0 rgb(255, 255, 255);
+}
+.active::after{
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 15px -15px 0 rgb(255, 255, 255);
+}
+
+.list-icon {
+    position: relative;
+    display: block;
+    text-align: center;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+}
+.list-title {
+    position: relative;
+    display: block;
+    font-size: 1.5em;
+    padding-left: 10px;
+    min-width: 60px;
+    height: 60px;
+    line-height: 50px;
+    white-space: nowrap;
+}
