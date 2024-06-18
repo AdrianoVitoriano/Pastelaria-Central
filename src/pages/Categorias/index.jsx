@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { Card } from "../../Components/Card/structure";
 import { route } from "../../../route";
-import { useNavigate } from "react-router-dom";
 export const Categorias = () => {
-	const navigate = useNavigate();
+
 	const [tipoItens, setTipoItens] = useState([]);
 	useEffect(() => {
 		fetch(`${route}/tipoitens`, {
