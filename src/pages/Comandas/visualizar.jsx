@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Card } from "../../Components/Card/structure";
 import { route } from "../../../route";
 import { Table } from "../../Components/Table/structure";
 
 export const VisualizarComanda = () => {
+	const Navigate = useNavigate();
 	const { id } = useParams();
 	const [comanda, setComandas] = useState();
 	useEffect(() => {
@@ -34,6 +35,7 @@ export const VisualizarComanda = () => {
 			});
 			if (response.ok) {
 				alert(`Comanda fechada com sucesso!`);
+				return Navigate("/comandas");
 			} else {
 				const errorResponse = await response.json();
 				alert(`Erro ao fechar comanda: ${errorResponse.message}`);

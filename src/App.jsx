@@ -10,7 +10,8 @@ import { Categorias } from './pages/Categorias'
 import { CadastroCategorias } from './pages/Categorias/cadastro'
 import { CadastroPedido } from './pages/Pedidos/cadastro'
 import { VisualizarComanda } from './pages/Comandas/visualizar'
-
+import { AlterarItem } from './pages/Itens/Alterar'
+import {VisualizarPedido} from './pages/Pedidos/visualizar'
 function App() {
 
   return (
@@ -19,12 +20,14 @@ function App() {
       <Route path="/mesas" element={<Mesas />} />
       <Route path="/mesas/cadastro" element={<CadastroMesa />} />
       <Route path="/pedidos" element={<Pedidos />} />
+      <Route path="/pedidos/:id" element={<VisualizarPedido />} />
       <Route path="/pedidos/cadastro" element={<CadastroPedido />} />
       <Route path="/pedidos/cadastro/:id" element={<CadastroPedido />} />
       <Route path="/comandas" element={<Comandas />} />
       <Route path="/comandas/:id" element={<VisualizarComanda />} />
       <Route path="/itens" element={<Itens />} />
       <Route path="/itens/cadastro" element={<CadastroItem />} />
+      <Route path="/itens/alterar/:id" element={<AlterarItem />} />
       <Route path="/categorias" element={<Categorias />} />
       <Route path="/categorias/cadastro" element={<CadastroCategorias />} />
       <Route path="/cozinhas" element={<Cozinhas />} />

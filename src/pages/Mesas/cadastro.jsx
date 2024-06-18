@@ -5,7 +5,7 @@ import { Card } from "../../Components/Card/structure";
 import { Form } from "../../Components/Form/structure";
 
 export const CadastroMesa = () => {
-	const navigate = useNavigate();
+	const Navigate = useNavigate();
 	const [mesas, setMesas] = useState([]);
 	useEffect(() => {
 		fetch(`${route}/mesas`, {
@@ -17,7 +17,7 @@ export const CadastroMesa = () => {
 			.then((data) => {
 				setMesas(data);
 			})
-			.catch((error) => {console.log(error)});
+			.catch((error) => {alert(error)});
 	}, []);
 
 	async function cadastrar() {
@@ -38,7 +38,7 @@ export const CadastroMesa = () => {
 		
 			if (response.ok) {
 				alert("Mesa cadastrada com sucesso!");
-				return navigate("/mesas")
+				return Navigate("/mesas")
 			} else {
 				const errorResponse = await response.json();
 				alert(`Erro ao cadastrar mesa: ${errorResponse.message}`);

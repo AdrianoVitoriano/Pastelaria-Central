@@ -15,8 +15,32 @@ export const Pedidos = () => {
 			})
 			.catch((error) => {});
 	}, []);
+	async function finalizarPedido(arg) {
+		try {
+			const id = parseInt(arg.target.id);
+			const responsePedido = await fetch(`${route}/pedidos/${id}`, {
+				method: "PUT",
+				mode: "cors",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					finalizado: 1,
+				}),
+			});
+			if (!responsePedido.ok) {
+				throw new Error("Falha ao finalizar o pedido");
+			}
+
+			alert("Pedido finalizado com sucesso!");
+			window.location.reload();
+		} catch (error) {
+			alert(`Erro ao finalizar o pedido: ${error.message}`);
+		}
+	}
 	return (
 		<>
+			{pedidos.length === 0 && <><h1 className="text-center title">Nenhum pedido</h1> <hr/></>}
 			<div className="container text-center">
 				<div className="row text-center">
 				<Card.Root colNumber={4} hover={true}>
@@ -42,8 +66,8 @@ export const Pedidos = () => {
 										<Card.Details name={"Mesa"} text={pedido.idMesa} />
 										<Card.Details name={"Total"} text={`R$${pedido.total ? pedido.total : "00,00"}`} />
 										<Card.Buttons>
-											<Card.Button action={() => {}} title={"Alterar"} />
-											<Card.Button action={() => {}} title={"Visualizar"} />
+											<Card.Button action={finalizarPedido} id={pedido.id} title={"Finalizar"} />
+											<Card.Button href={`/pedidos/${pedido.id}`} title={"Visualizar"} />
 										</Card.Buttons>
 									</Card.Body>
 								</Card.Root>

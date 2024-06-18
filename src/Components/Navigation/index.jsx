@@ -1,4 +1,6 @@
+import { useLocation } from "react-router-dom";
 import { Navigation } from "./structure";
+import { useEffect, useState } from "react";
 const Links = [
 	{
 		title: "Mesas",
@@ -33,20 +35,27 @@ const Links = [
 ];
 
 export const Navigator = () => {
-	return (
-		<>
-			<Navigation.Root title="Menu">
-					<Navigation.LinkList>
-						{Links.map((link) => {
-							console.log(window.location.pathname)
-							return (
-								<Navigation.NavLink href={link.url} title={link.title} active={window.location.pathname.includes(link.url) || window.location.pathname === "/" && link.url === "/mesas"	 }>
-									<ion-icon name={link.icon} size="large"></ion-icon>
-								</Navigation.NavLink>
-							);
-						})}
-					</Navigation.LinkList>
-			</Navigation.Root>
-		</>
-	);
+    const location = useLocation();
+    const [url, setUrl] = useState(location.pathname);
+
+    useEffect(() => {
+        setUrl(location.pathname);
+    }, [location]);
+
+    return (
+        <>
+            <Navigation.Root title="Menu"> 
+                <Navigation.LinkList>
+                    {Links.map((link) => {
+                        const isActive = url.includes(link.url) || (url === "/" && link.url === "/mesas");
+                        return (
+                            <Navigation.NavLink href={link.url} title={link.title} active={isActive}>
+                                <ion-icon name={link.icon} size="large"></ion-icon>
+                            </Navigation.NavLink>
+                        );
+                    })}
+                </Navigation.LinkList>
+            </Navigation.Root>
+        </>
+    );
 };

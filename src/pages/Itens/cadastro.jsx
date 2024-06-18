@@ -5,7 +5,7 @@ import { Card } from "../../Components/Card/structure";
 import { Form } from "../../Components/Form/structure";
 
 export const CadastroItem = () => {
-	const navigate = useNavigate();
+	const Navigate = useNavigate();
 	const [tiposItens, setTipoItens] = useState([]);
 	useEffect(() => {
 		fetch(`${route}/tipoitens-ativos`, {
@@ -34,14 +34,14 @@ export const CadastroItem = () => {
 				},
 				body: JSON.stringify({
 					nome: nome.value,
-					idTipo: categoria.value,
+					idTipo: parseInt(categoria.value),
 					preco: preco.value,
 				}),
 			});
 		
 			if (response.ok) {
 				alert("Item cadastrado com sucesso!");
-				return navigate("/itens")
+				return Navigate("/itens")
 			} else {
 				const errorResponse = await response.json();
 				alert(`Erro ao cadastrar item: ${errorResponse.message}`);

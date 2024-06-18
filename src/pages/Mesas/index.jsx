@@ -2,69 +2,6 @@ import { useState, useEffect } from "react";
 import { route } from "../../../route";
 import { Card } from "../../Components/Card/structure";
 
-const mesaList = [
-	{
-		id: 1,
-		comanda: 5,
-		status: true,
-		total: 50,
-	},
-	{
-		id: 1,
-		comanda: 5,
-		status: true,
-		total: 50,
-	},
-	{
-		id: 1,
-		comanda: 5,
-		status: true,
-		total: 50,
-	},
-	{
-		id: 1,
-		comanda: 5,
-		status: true,
-		total: 50,
-	},
-	{
-		id: 1,
-		comanda: 5,
-		status: true,
-		total: 50,
-	},
-	{
-		id: 1,
-		comanda: 5,
-		status: true,
-		total: 50,
-	},
-	{
-		id: 1,
-		comanda: 5,
-		status: true,
-		total: 50,
-	},
-	{
-		id: 1,
-		comanda: 5,
-		status: true,
-		total: 50,
-	},
-	{
-		id: 1,
-		comanda: 5,
-		status: true,
-		total: 50,
-	},
-	{
-		id: 1,
-		comanda: 5,
-		status: true,
-		total: 50,
-	},
-];
-
 export const Mesas = () => {
 	const [mesas, setMesas] = useState([]);
 	useEffect(() => {
@@ -82,6 +19,11 @@ export const Mesas = () => {
 
 	return (
 		<>
+			{mesas.length === 0 && ( <>
+				<h1 className="text-center title">Nenhuma Mesa Cadastrada</h1> <hr />
+			
+			</>)}
+
 			<div className="container text-center">
 				<div className="row text-center">
 					<Card.Root colNumber={4} hover={true}>
@@ -116,7 +58,7 @@ export const Mesas = () => {
 											<>
 												<Card.Details name={"Status"} text={`Aberta`} />
 												<Card.Buttons>
-													<Card.Button action={() => {}} title={"Novo pedido"} />
+													<Card.Button href={`/pedidos/cadastro/${mesa.id}`} title={"Novo pedido"} />
 												</Card.Buttons>
 											</>
 										)}

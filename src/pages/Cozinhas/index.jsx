@@ -50,17 +50,23 @@ export const Cozinhas = () => {
 				}),
 			});
 			if (!responseItens.ok) {
-				throw new Error("Falha ao atualizar os itens do pedido");
+				throw new Error("Falha ao concluir o pedido");
 			}
 
-			alert("Pedido cadastrado com sucesso!");
+			alert("Pedido concluído com sucesso!");
+			window.location.reload();
 		} catch (error) {
-			alert(`Erro ao processar o pedido: ${error.message}`);
+			alert(`Erro ao concluir o pedido: ${error.message}`);
 		}
 	}
 
 	return (
 		<>
+			{cozinha.length === 0 && (
+				<>
+					<h1 className="text-center title">Nenhum Pedido</h1> <hr />
+				</>
+			)}
 			<div className="container text-center">
 				<div className="row text-center">
 					{cozinha.map((pedido, index) => {
@@ -135,9 +141,6 @@ export const Cozinhas = () => {
 							);
 						}
 					})}
-
-					{cozinha.length === 0 && <h1 className="text-center title">Nenhum pedido</h1>}
-					<hr />
 				</div>
 			</div>
 		</>

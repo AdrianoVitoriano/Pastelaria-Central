@@ -6,6 +6,7 @@ import { Table } from "../../Components/Table/structure";
 import { Card } from "../../Components/Card/structure";
 
 export const CadastroPedido = () => {
+	const Navigate = useNavigate();
 	const { id } = useParams();
 	const [categorias, setCategorias] = useState([]);
 	const [mesas, setMesas] = useState([]);
@@ -21,7 +22,7 @@ export const CadastroPedido = () => {
 				setCategorias(data);
 			})
 			.catch((error) => {
-				console.log(error);
+				alert(error);
 			});
 	}, []);
 
@@ -92,6 +93,7 @@ export const CadastroPedido = () => {
 
 				if (response.ok) {
 					alert("Pedido cadastrado com sucesso!");
+					return Navigate("/pedidos");
 				} else {
 					const errorResponse = await response.json();
 					alert(`Falha ao cadastrar pedido: ${errorResponse.message}`);
